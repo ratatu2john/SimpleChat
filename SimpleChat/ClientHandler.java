@@ -29,7 +29,6 @@ public class ClientHandler implements Runnable {
 			outputClientStream = new PrintWriter(clientSocket.getOutputStream(), true);
 			outputClientStream.println("Enter your username: ");
 			username = inputClientStream.readLine();
-			
 			// client disconnected without entering a username
 			if (username == null) {
 				username = "Unknown";
@@ -39,6 +38,9 @@ public class ClientHandler implements Runnable {
 				System.out.println("Client entered empty username.");
 				outputClientStream.println("Enter your username: ");
 				username = inputClientStream.readLine();
+				if (username == null) {
+					username = "Unknown";
+				}
 			}
 			 
 			
@@ -52,6 +54,10 @@ public class ClientHandler implements Runnable {
 			}
 		} 
 		catch (IOException e) {
+			// client disconnected without entering a username
+			if (username == null) {
+				username = "Unknown";
+			}
 			System.err.println(username + " disconnected abruptly!");
 		} 
 		finally {
