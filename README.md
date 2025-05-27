@@ -2,6 +2,8 @@
 
 
 
+https://github.com/user-attachments/assets/9cafc50f-ae0c-42f6-885e-5a7d5a4ec200
+
 
 
 A simple Android chat application demonstrating client-server architecture using Java multithreading. The project consists of two parts: a **server** (handles connections and messaging) and a **client** (user interface for chatting).
